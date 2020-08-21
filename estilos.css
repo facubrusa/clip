@@ -1,0 +1,14 @@
+table {
+    width: 600px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    }
+    td {
+    border: 2px solid black;
+    }
+    th {
+    border: 2px solid black;
+    }
+    tfoot {
+    text-align: center;
+    }
