@@ -1,84 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="description" content="Atributos de Tablas">
+<meta name="description" content="First page">
 <meta charset="UTF-8">
-<title>Atributos de Tablas</title>
+<title>First page on BT4</title>
 <link rel="stylesheet" href="estilos.css" type="text/css">
-<link href='https://www.w3.org/TR/html-markup/' target=_blank>
+<link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
+<!--* Diseña un sitio web (contenido a elección) de 2 o 3 páginas web que incluya:
+    * Etiquetas semánticas (html5).
+    * Enlaces externos e internos.
+    * Al menos una imágen (html5).
+    * Al menos una tabla.
+    * Estilos externos e internos (CSS3).
+
+    * Agregar Boostrap-->
+
+<!-- Actividad clase 4
+Utilizando bootstrap, configura el sitio web creado en la actividad anterior, a fin de que sea web responsive. El mismo además, deberá contener:
+una barra de navegación que permita movernos por las páginas web del sitio,
+un formulario de contacto (el mismo deberá incluir validaciones obligando que el usuario ingrese los datos obligatorios: apellido y nombre, mail y mensaje) y, verificar que el mail tenga el formato correcto.
+
+Se valorará:
+inclusión de todos los items mencionados en la consigna
+aplicación de los contenidos teóricos desarrollados
+creatividad en la implementación de la actividad 
+funcionalidad del sitio web responsive solicitado
+coherencia
+prolijidad-->
 </head>
 <body>
     <header>
-    <h1>Atributos de Tablas</h1>
-    <br>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="https://getbootstrap.com/">
+                <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                Bootstrap
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">Documentación</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://themes.getbootstrap.com/">Temas</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
     </header>
-    <main>
-        <h3>Tablas: Atributos</h3>
-        <table>
-            <caption><strong>Leyenda de la tabla</strong></caption>
-            <thead>
+    <div class="container" style="height: 60%;">
+        <h3>Tabla: Mis Datos</h3>
+        <table class="table table-striped">
+            <thead class="thead-dark">
                 <tr>
-                    <th>Etiqueta</th>
-                    <th>Descripción</th>
-                    <th>Documentación</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Province</th>
+                    <th scope="col">Country</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>&#60table&#62</td>
-                    <td>Crea una tabla</td>
-                    <td><a href='table.html#table'>Documentación W3C</a></td>
-                </tr>
-                <tr>
-                    <td>&#60caption&#62</td>
-                    <td>Muestra información adicional sobre la tabla</td>
-                    <td><a href='table.html#caption'>Documentación W3C</a></td>
-                </tr>
-                <tr>
-                    <td>&#60th&#62</td>
-                    <td>Define la cabecera de una columna</td>
-                    <td><a href='table.html#th'>Documentación W3C</a></td>
-                </tr>
-                <tr>
-                    <td>&#60tr&#62</td>
-                    <td>Define la fila</td>
-                    <td><a href='tr.html#tr'>Documentación W3C</a></td>
-                </tr>
-                <tr>
-                    <td>&#60td&#62</td>
-                    <td>Determina una celda</td>
-                    <td><a href='td.html#td'>Documentación W3C</a></td>
-                </tr>
-                <tr>
-                    <td>&#60colgroup&#62</td>
-                    <td>Permite la agrupación de contenido</td>
-                    <td><a href='colgroup.html#colgroup'>Documentación W3C</a></td>
-                </tr>
-                <tr>
-                    <td>&#60thead&#62</td>
-                    <td>Contenido cabecera (títulos, subtítulos, secciones, etc...)</td>
-                    <td><a href='thead.html#thead'>Documentación W3C</a></td>
-                </tr>
-                <tr>
-                    <td>&#60tbody&#62</td>
-                    <td>Contenido Principal (celdas principales, etc...)</td>
-                    <td><a href='tbody.html#tbody'>Documentación W3C</a></td>
-                </tr>
-                <tr>
-                    <td>&#60tfoot&#62</td>
-                    <td>Contenido secundario (fuente, celdas secundarias, etc..)</td>
-                    <td><a href='tfoot.html#tfoot'>Documentación W3C</a></td>
-                </tr>
-            </tbody>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Facu</td>
+                        <td>Brusa</td>
+                        <td>Córdoba</td>
+                        <td>Argentina</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Facu</td>
+                        <td>Brusa</td>
+                        <td>Córdoba</td>
+                        <td>Argentina</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Facu</td>
+                        <td>Brusa</td>
+                        <td>Córdoba</td>
+                        <td>Argentina</td>
+                    </tr>
+              </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="3" ><a href='https://www.w3.org/TR/html-markup/table.html'>Recomendaciones del W3C</a></td>
+                    <td colspan="5"><a href='https://getbootstrap.com/docs/4.0/content/tables/'>Documentación de tablas</a></td>
                 </tr>
             </tfoot>
         </table>
-        <div>
-            <img src="descarga.jpg" style="width: 400px;height: 200px;">
+        <div style="height: 30%;">
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <img src="descarga.jpg" style="width: 100%; height: 200px;">
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <img src="descarga.jpg" style="width: 100%; height: 200px;">
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <img src="descarga.jpg" style="width: 100%; height: 200px;">
+                </div>
+            </div>
         </div>
-    </main>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 </body>
 </html>
