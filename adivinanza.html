@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="First page">
+<meta charset="UTF-8">
+<title>First page on BT4</title>
+<link rel="stylesheet" href="estilos.css" type="text/css">
+<link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
+<!--* Diseña un sitio web (contenido a elección) de 2 o 3 páginas web que incluya:
+    * Etiquetas semánticas (html5).
+    * Enlaces externos e internos.
+    * Al menos una imágen (html5).
+    * Al menos una tabla.
+    * Estilos externos e internos (CSS3).
+
+    * Agregar Boostrap-->
+
+<!-- Actividad clase 4
+Utilizando bootstrap, configura el sitio web creado en la actividad anterior, a fin de que sea web responsive. El mismo además, deberá contener:
+una barra de navegación que permita movernos por las páginas web del sitio,
+un formulario de contacto (el mismo deberá incluir validaciones obligando que el usuario ingrese los datos obligatorios: apellido y nombre, mail y mensaje) y, verificar que el mail tenga el formato correcto.
+
+Se valorará:
+inclusión de todos los items mencionados en la consigna
+aplicación de los contenidos teóricos desarrollados
+creatividad en la implementación de la actividad 
+funcionalidad del sitio web responsive solicitado
+coherencia
+prolijidad-->
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="https://getbootstrap.com/">
+                <img src="https://image.flaticon.com/icons/svg/1101/1101427.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                Juegos de adivinanzas
+            </a>
+        </nav>
+    </header>
+    <div class="container" style="height: 60%;">
+        <h3>Adivina3</h3>
+        <div>
+            <p>Tengo agujas pero no sé coser, tengo números pero no sé leer, las horas te doy, ¿Sabes quién soy?</p>
+            <div class="form-inline">
+                <div class="form-group mx-sm-3 mb-2">
+                  <label for="inputResponse" class="sr-only">Respuesta: </label>
+                  <input type="text" class="form-control" id="inputResponse" placeholder="Su respuesta aquí">
+                  <input type="hidden" id="inputIntentos">
+                </div>
+                <button type="button" class="btn btn-primary mb-2" id="btnAceptar">Aceptar</button>
+                <div class="alert alert-primary ml-3" id="alertSuccess" style="display: none;" role="alert">
+                    Acertaste!
+                </div>
+                <div class="alert alert-danger ml-3" id="alertTryAgain" style="display: none;" role="alert">
+                    Intentalo de nuevo!
+                </div>
+                <div class="alert alert-warning ml-3" id="alertLoser" style="display: none;" role="alert">
+                    Perdiste :c
+                </div>
+                <div class="alert alert-success ml-3" id="primeraPista" style="display: none;" role="alert">
+                    Pista: Es algo que esta en tu comedor
+                </div>
+                <div class="alert alert-success ml-3" id="segundaPista" style="display: none;" role="alert">
+                    Pista: Lo utilizas para ver la hora
+                </div>
+            </div>
+            <span class="ml-3">Numeros de intentos: <strong id="intentosLabel">4</strong></span>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script>
+        //el reloj respuesta correcta
+        $(document).ready(function () {
+            $('#inputIntentos').val(4);
+            $('#btnAceptar').click(() => actionButton());
+        });
+
+        function actionButton() {
+            var respuesta = $('#inputResponse').val().toLowerCase();
+            if(respuesta != "reloj") {
+                var intentos = parseInt($('#inputIntentos').val());
+                intentos--;
+                if(intentos == 0){
+                    $('#alertLoser').show();
+                    $('#btnAceptar').attr('disabled', 'true');
+                    $('#inputIntentos').val(intentos);
+                    $('#intentosLabel').html(intentos);
+                } else {
+                    $('#alertTryAgain').show();
+                    setTimeout(function(){ $('#alertTryAgain').hide(); }, 3000);
+                    $('#inputIntentos').val(intentos);
+                    $('#intentosLabel').html(intentos);
+                    $('#inputResponse').val('');
+                }
+                if(intentos == 1){
+                    $('#segundaPista').show();
+                    setTimeout(function(){ $('#segundaPista').hide(); }, 5000);
+                }
+                if(intentos == 2){
+                    $('#primeraPista').show();
+                    setTimeout(function(){ $('#primeraPista').hide(); }, 5000);
+                }
+            } else {
+                $('#alertSuccess').show();
+                $('#btnAceptar').attr('disabled', 'true');
+            }
+        }
+    </script>
+    
+</body>
+</html>
