@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi formulario</title>
+    <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
+    <!-- Actividad clase 4
+        Utilizando bootstrap, configura el sitio web creado en la actividad anterior, a fin de que sea web responsive. El mismo además, deberá contener:
+        una barra de navegación que permita movernos por las páginas web del sitio,
+        un formulario de contacto (el mismo deberá incluir validaciones obligando que el usuario ingrese los datos obligatorios: apellido y nombre, mail y mensaje) y, verificar que el mail tenga el formato correcto.
+
+        Se valorará:
+        inclusión de todos los items mencionados en la consigna
+        aplicación de los contenidos teóricos desarrollados
+        creatividad en la implementación de la actividad 
+        funcionalidad del sitio web responsive solicitado
+        coherencia
+        prolijidad-->
+    <style>
+        body {
+            background: #C6FFDD;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="adivinanza.html">
+                <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                Bootstrap 4
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="adivinanza.html">Adivinanza</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center mb-5">Formulario hecho con Bootstrap 4</h2>
+                <hr class="mb-5">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <span class="anchor" id="formRegister"></span>
+    
+                        <!-- form card register -->
+                        <div class="card card-outline-secondary">
+                            <div class="card-header">
+                                <h3 class="mb-0 text-center">Formulario de Registro</h3>
+                            </div>
+                            <div class="card-body">
+                                <form class="form" role="form" autocomplete="off">
+                                    <div class="form-group">
+                                        <label for="inputName">Nombre</label>
+                                        <input type="text" class="form-control" id="inputName" placeholder="Nombre" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3">Contraseña</label>
+                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputVerify3">Reingresar contraseña</label>
+                                        <input type="password" class="form-control" id="inputVerify3" placeholder="Reingresar contraseña" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success btn-lg float-right">Registrarse</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /form card register -->
+    
+                    </div>
+                </div>
+                <!--/row-->
+    
+            <br><br><br><br>
+    
+            </div>
+            <!--/col-->
+        </div>
+        <!--/row-->
+        <hr>
+        <p class="text-center">Fin del Formulario</p>
+        
+    </div>
+    <!--/container-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+</body>
+</html>

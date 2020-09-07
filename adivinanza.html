@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="First page">
+<meta charset="UTF-8">
+<title>First page on BT4</title>
+<link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
+<style>
+    body {
+        font-family: Arial,Helvetica,sans-serif;
+        text-align: center;
+        background: url(http://www.pipoclub.com/img/bgprimavera.png) repeat-y center top #FFC;
+        background-attachment: fixed;
+        height: 100vh;
+        min-height:600px;
+    }
+    .contenidoPrincipal {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        max-width: 50%;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="https://getbootstrap.com/">
+            <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            Bootstrap
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="formulario.html">Formulario</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container contenidoPrincipal">
+        <h2>Adivina3</h2>
+        <div>
+            <p style="font-weight: 600; font-size: 18px;">Tengo agujas pero no sé coser, tengo números pero no sé leer, las horas te doy</p> 
+            <p style="font-weight: 600; font-size: 18px;">¿Sabes quién soy?</p>
+            <div class="form-inline justify-content-center">
+                <div class="form-group mx-sm-3 mb-2">
+                  <label for="inputResponse" class="sr-only">Respuesta: </label>
+                  <input type="text" class="form-control" id="inputResponse" placeholder="Su respuesta aquí">
+                  <input type="hidden" id="inputIntentos">
+                </div>
+                <button type="button" class="btn btn-primary mb-2" id="btnAceptar">Aceptar</button>
+                <div style="width: 60%">
+                    <div class="alert alert-primary ml-3 mt-3" id="alertSuccess" style="display: none;" role="alert">
+                        Acertaste!
+                    </div>
+                    <div class="alert alert-danger ml-3 mt-3" id="alertTryAgain" style="display: none;" role="alert">
+                        Intentalo de nuevo!
+                    </div>
+                    <div class="alert alert-warning ml-3 mt-3" id="alertLoser" style="display: none;" role="alert">
+                        Perdiste :c
+                    </div>
+                    <div class="alert alert-success ml-3 mt-3" id="primeraPista" style="display: none;" role="alert">
+                        Pista: Es algo que esta en tu comedor
+                    </div>
+                    <div class="alert alert-success ml-3 mt-3" id="segundaPista" style="display: none;" role="alert">
+                        Pista: Lo utilizas para ver la hora
+                    </div>
+                </div>
+            </div>
+            <span class="ml-3">Numeros de intentos: <strong id="intentosLabel">4</strong></span>
+        </div>
+        <img src="https://image.shutterstock.com/image-illustration/diverse-hands-holding-try-again-260nw-219253939.jpg" id="imgTryAgain" style="display: none">
+        <img src="https://cdn.memegenerator.es/imagenes/memes/full/30/20/30200734.jpg" id="imgAcertaste" style="display: none">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script>
+        //el reloj respuesta correcta
+        $(document).ready(function () {
+            $('#inputIntentos').val(4);
+            $('#btnAceptar').click(() => actionButton());
+        });
+
+        function actionButton() {
+            var respuesta = $('#inputResponse').val().toLowerCase();
+            if(respuesta != "reloj") {
+                var intentos = parseInt($('#inputIntentos').val());
+                intentos--;
+                if(intentos == 0){
+                    $('#alertLoser').show();
+                    $('#btnAceptar').attr('disabled', 'true');
+                    $('#inputIntentos').val(intentos);
+                    $('#intentosLabel').html(intentos);
+                    $('#imgTryAgain').show();
+                } else {
+                    $('#alertTryAgain').show();
+                    setTimeout(function(){ $('#alertTryAgain').hide(); }, 3000);
+                    $('#inputIntentos').val(intentos);
+                    $('#intentosLabel').html(intentos);
+                    $('#inputResponse').val('');
+                }
+                if(intentos == 1){
+                    $('#segundaPista').show();
+                    setTimeout(function(){ $('#segundaPista').hide(); }, 5000);
+                }
+                if(intentos == 2){
+                    $('#primeraPista').show();
+                    setTimeout(function(){ $('#primeraPista').hide(); }, 5000);
+                }
+            } else {
+                $('#alertSuccess').show();
+                $('#btnAceptar').attr('disabled', 'true');
+                $('#imgAcertaste').show();
+            }
+        }
+    </script>
+    
+</body>
+</html>

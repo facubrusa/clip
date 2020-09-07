@@ -1,14 +1,25 @@
 table {
     width: 600px;
-    border: 2px solid black;
+    border: 2px solid white;
     border-collapse: collapse;
-    }
-    td {
-    border: 2px solid black;
-    }
-    th {
-    border: 2px solid black;
-    }
-    tfoot {
+}
+td {
+    border: 2px solid white;
+    color: #ffffff;
+}
+th {
+    border: 2px solid white;
+}
+tfoot {
     text-align: center;
-    }
+}
+
+body {
+    background: #DA4453;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #89216B, #DA4453);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #89216B, #DA4453); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h3 {
+    color: #ffffff;
+}
